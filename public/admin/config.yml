@@ -42,3 +42,4 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Event Date", name: "eventDate", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
