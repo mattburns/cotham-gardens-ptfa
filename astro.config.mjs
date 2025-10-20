@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mattburns.github.io/',
-  base: '/cotham-gardens-ptfa',
+  site: 'https://cothamgardensptfa.co.uk/',
   integrations: [sitemap(), tailwind()]
 });
