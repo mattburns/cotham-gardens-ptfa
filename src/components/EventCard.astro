@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+  event: CollectionEntry<'events'>;
+};
+
+const { event } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/*'
+);
+---
+
+<div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow">
+  <a href={`/events/${event.id}/`}>
+    {
+      event.data.image && images[`/src/assets/images/${event.data.image}`] && (
+        <Image
+          class="rounded-t-lg"
+          src={images[`/src/assets/images/${event.data.image}`]()}
+          alt={event.data.title}
+        />
+      )
+    }
+  </a>
+  <div class="p-5">
+    <a href={`/events/${event.id}/`}>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight">
+        {event.data.title}
+      </h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-700">
+      {event.data.eventDate.toLocaleDateString()}
+    </p>
+  </div>
+</div>
