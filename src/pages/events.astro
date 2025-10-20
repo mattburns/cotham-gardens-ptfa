@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+const events = await getCollection('events');
+---
+
+<Layout title="Events - Cotham Gardens PTFA">
+  <div class="prose lg:prose-xl">
+    <h1>Upcoming Events</h1>
+    <ul>
+      {events.map((event) => (
+          <li>
+            <a
+              href={`/events/${event.id}`}
+            >
+              {event.data.title} -{' '}
+              {new Date(event.data.eventDate).toLocaleDateString()}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>

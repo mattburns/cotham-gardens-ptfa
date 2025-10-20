@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {Content, frontmatter} from '../content/pages/home.md';
+import { Image } from 'astro:assets';
+import localBirdImage from '../assets/images/dolphins.jpg';
+---
+
+<Layout title={frontmatter.title}>
+  <div class="prose lg:prose-xl">
+    <Content />
+    <Image src={localBirdImage} alt="Local Bird" />
+  </div>
+</Layout>

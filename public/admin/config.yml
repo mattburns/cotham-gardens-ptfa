@@ -1,0 +1,44 @@
+local_backend: true
+
+publish_mode: editorial_workflow
+
+backend:
+  # name: test-repo
+  name: github
+  squash_merges: true
+  repo: mattburns/cotham-gardens-ptfa
+
+media_folder: "src/assets/images"
+public_folder: "src/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "src/content/pages/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "About"
+        name: "about"
+        file: "src/content/pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Contact"
+        name: "contact"
+        file: "src/content/pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events"
+    label: "Events"
+    folder: "src/content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Event Date", name: "eventDate", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
