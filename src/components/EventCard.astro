@@ -12,7 +12,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 ---
 
-<div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow">
+<div
+  class="max-w-sm rounded-lg border border-gray-200 bg-white shadow transition duration-200 hover:scale-105"
+>
   <a href={`/events/${event.id}/`}>
     {
       event.data.image && images[`/${event.data.image}`] && (
@@ -23,21 +25,19 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         />
       )
     }
-  </a>
-  <div class="p-5">
-    <a href={`/events/${event.id}/`}>
+    <div class="p-5">
       <h5 class="mb-2 text-2xl font-bold tracking-tight">
         {event.data.title}
       </h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-700">
-      {
-        event.data.eventDate.toLocaleDateString('en-GB', {
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric'
-        })
-      }
-    </p>
-  </div>
+      <p class="mb-3 font-normal text-gray-700">
+        {
+          event.data.eventDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+          })
+        }
+      </p>
+    </div>
+  </a>
 </div>
