@@ -35,38 +35,38 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site links in Decap CMS (optional)
 site_url: https://cothamgardensptfa.co.uk
 
-media_folder: "src/assets/images"
-public_folder: "src/assets/images"
+media_folder: 'src/assets/images'
+public_folder: 'src/assets/images'
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - label: "Home"
-        name: "home"
-        file: "src/content/pages/home.md"
+      - label: 'Home'
+        name: 'home'
+        file: 'src/content/pages/home.md'
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - label: "About"
-        name: "about"
-        file: "src/content/pages/about.md"
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'About'
+        name: 'about'
+        file: 'src/content/pages/about.md'
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Contact"
-        name: "contact"
-        file: "src/content/pages/contact.md"
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Contact'
+        name: 'contact'
+        file: 'src/content/pages/contact.md'
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-  - name: "events"
-    label: "Events"
-    folder: "src/content/events"
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'events'
+    label: 'Events'
+    folder: 'src/content/events'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Event Date", name: "eventDate", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Event Date', name: 'eventDate', widget: 'datetime' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Image', name: 'image', widget: 'image' }

@@ -1,10 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import EventCard from '@components/EventCard.astro';
 import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 const events = await getCollection('events');
-const upcomingEvents = events.filter(event => event.data.eventDate >= new Date());
-const pastEvents = events.filter(event => event.data.eventDate < new Date());
+const upcomingEvents = events.filter(
+  (event) => event.data.eventDate >= new Date()
+);
+const pastEvents = events.filter((event) => event.data.eventDate < new Date());
 ---
 
 <Layout title="Events - Cotham Gardens PTFA">
@@ -14,9 +16,11 @@ const pastEvents = events.filter(event => event.data.eventDate < new Date());
       {upcomingEvents.map((event) => <EventCard event={event} />)}
     </div>
 
-	<h1 class="mt-8">Past Events</h1>
-	<div class="opacity-50 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-	  {pastEvents.map((event) => <EventCard event={event} />)}
-	</div>
+    <h1 class="mt-8">Past Events</h1>
+    <div
+      class="grid grid-cols-1 gap-4 opacity-50 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {pastEvents.map((event) => <EventCard event={event} />)}
+    </div>
   </div>
 </Layout>
