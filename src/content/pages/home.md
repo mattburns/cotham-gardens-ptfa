@@ -8,3 +8,5 @@ We are the **P**arent, **T**eacher and **F**riends **A**ssociation for [Cotham G
 
 On this website you can find out more about what we do, see our upcoming [events](https://cothamgardensptfa.co.uk/events/), and find out how to get in touch.
 
+Last academic year we were able to give **£14k** to the school for new musical instruments, sports day at Shine, author visits, the librarian, class enrichment activities & more!
+
