@@ -1,7 +1,7 @@
 ---
 title: Wreath Making Workshop (Family)
 eventDate: 2025-12-06T19:00:00.000+00:00
-image: src/assets/images/whatsapp-image-2025-10-21-at-17.46.02.jpeg
+image: src/assets/images/wreath-making-workshops.jpeg
 ---
 There are three workshops on Saturday:
 
