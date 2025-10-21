@@ -1,5 +1,5 @@
 ---
-title: Play Street & Cake Sale
+title: Play Street & Cake Sale at Elmgrove
 eventDate: 2025-11-07T15:15:00.000+00:00
 image: src/assets/images/2025-11-07-play-street.jpg
 ---
