@@ -1,5 +1,5 @@
 ---
-title: Christmas Trees for Sale
+title: Christmas Trees for Sale (6th Dec)
 eventDate: 2025-12-06T08:00:00.000+00:00
 image: src/assets/images/xmas-trees-2025-minus-pricelist.png
 ---
