@@ -31,7 +31,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </h5>
     </a>
     <p class="mb-3 font-normal text-gray-700">
-      {event.data.eventDate.toLocaleDateString()}
+      {
+        event.data.eventDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        })
+      }
     </p>
   </div>
 </div>
