@@ -1,10 +1,23 @@
 ---
 import { Content, frontmatter } from '@content/pages/home.md';
 import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/*'
+);
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="prose lg:prose-xl">
-    <Content />
+  <div class="prose lg:prose-xl lg:grid lg:grid-cols-3 lg:gap-4">
+    <div class="lg:col-span-1">
+      <Content />
+    </div>
+    <div class="lg:col-span-2">
+      <Image
+        src={images[`/${frontmatter.image}`]()}
+        alt="Dolphins ironwork at Cotham Gardens"
+        class="rounded-2xl"
+      />
+    </div>
   </div>
 </Layout>
