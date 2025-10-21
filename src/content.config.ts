@@ -6,7 +6,7 @@ import { glob } from 'astro/loaders';
 
 // 3. Define your collection(s)
 const events = defineCollection({
-  loader: glob({ pattern: '*.md', base: 'src/content/events' }),
+  loader: glob({ pattern: '*.{md,mdx}', base: 'src/content/events' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
