@@ -14,6 +14,4 @@ Alternatively send us a message or contact your class rep.
 
 If you know of a business who might want to sponsor our event and make more funds available for school please let us know. Thanks
 
-
-
 ![Winter Fair Poster](@assets/images/Winter Fair Poster - Snowy scene.png)
