@@ -1,7 +1,7 @@
 ---
-title: 'Easter Egg Hunt 2025'
+title: Easter Egg Hunt 2025
 eventDate: 2025-03-28
-image: 2025-03-28-easter-egg-hunt.jpg
+image: src/assets/images/2025-03-28-easter-egg-hunt.jpg
 ---
 
 ## Easter egg hunt

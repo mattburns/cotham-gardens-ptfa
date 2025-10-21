@@ -15,10 +15,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow">
   <a href={`/events/${event.id}/`}>
     {
-      event.data.image && images[`/src/assets/images/${event.data.image}`] && (
+      event.data.image && images[`/${event.data.image}`] && (
         <Image
           class="rounded-t-lg"
-          src={images[`/src/assets/images/${event.data.image}`]()}
+          src={images[`/${event.data.image}`]()}
           alt={event.data.title}
         />
       )

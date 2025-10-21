@@ -3,6 +3,7 @@ title: Play Street & Cake Sale
 eventDate: 2025-11-07T15:15:00.000+00:00
 image: src/assets/images/2025-11-07-play-street.jpg
 ---
+
 # Play Street and Cake Sale
 
 We're closing the road outside the Elmgrove site after school so everyone can play and eat cake! Any proceeds raised will go towards the PTFA.
