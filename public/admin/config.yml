@@ -1,7 +1,5 @@
 local_backend: true
 
-publish_mode: editorial_workflow
-
 # Use DecapBridge PKCE auth (required) - https://decapbridge.com/
 backend:
   name: git-gateway
