@@ -1,0 +1,10 @@
+---
+import { Content, frontmatter } from '@content/pages/active-travel.md';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title={frontmatter.title}>
+  <div class="prose lg:prose-xl">
+    <Content />
+  </div>
+</Layout>
