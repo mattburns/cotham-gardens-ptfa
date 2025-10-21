@@ -2,11 +2,15 @@
 import EventCard from '@components/EventCard.astro';
 import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-const events = await getCollection('events');
+const events = (await getCollection('events')).sort(
+  (a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+);
 const upcomingEvents = events.filter(
   (event) => event.data.eventDate >= new Date()
 );
-const pastEvents = events.filter((event) => event.data.eventDate < new Date());
+const pastEvents = events
+  .filter((event) => event.data.eventDate < new Date())
+  .sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
 ---
 
 <Layout title="Events - Cotham Gardens PTFA">
