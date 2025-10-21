@@ -1,5 +1,5 @@
 ---
-title: Wreath Making Workshop (Family)
+title: Wreath Making Workshop (Daytime - Family)
 eventDate: 2025-12-06T19:00:00.000+00:00
 image: src/assets/images/wreath-making-workshops.jpeg
 ---
