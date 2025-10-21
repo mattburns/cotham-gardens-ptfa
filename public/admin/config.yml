@@ -55,6 +55,12 @@ collections:
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Active Travel'
+        name: 'active-travel'
+        file: 'src/content/pages/active-travel.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'Contact'
         name: 'contact'
         file: 'src/content/pages/contact.md'
