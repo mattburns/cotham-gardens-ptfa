@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 const { event } = Astro.props;
 const { Content } = await render(event);
 
-// No image resolution logic here; HeroHeader handles optimized image
 ---
 
 <Layout title={event.data.title + ' - Cotham Gardens PTFA'}>
@@ -27,9 +26,6 @@ const { Content } = await render(event);
 
   <div class="prose lg:prose-xl px-4">
     <a href="/events" class="mb-4 block">&larr; All Events</a>
-
-    {/* Title rendered by HeroHeader (with fallback when no image) */}
-
     <Content />
   </div>
 </Layout>
