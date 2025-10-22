@@ -3,6 +3,7 @@ title: Summer Fair
 eventDate: 2025-07-12T12:00:00.000+01:00
 image: src/assets/images/cotham-gardens-primary-summer-fair-2025-poster.png
 ---
+
 Saturday 12th July 12pm - 3pm
 
 🏰 Bouncy castle
@@ -27,15 +28,13 @@ Saturday 12th July 12pm - 3pm
 
 🚲 Dr Bike - being along your bike for some basic maintenance - cycle racks are available in the main playground
 
-* and much much more!
+- and much much more!
 
 Please spread the word as this is open to everybody and is FREE ENTRY! Come hungry! :)
-
 
 Entrance will be via the main playground gates at Cotham Grove.
 
 🎈VOLUNTEERS NEEDED 🎈
 If you can volunteer some time please add a message below / contact your Class rep / email cgpsptaf@gmail.com.
-
 
 The PTAF can't run these events without you! Thank you.
