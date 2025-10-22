@@ -6,17 +6,17 @@ Source code for [https://cothamgardensptfa.co.uk/](https://cothamgardensptfa.co.
 
 The goal of this project is to make a PTFA website that is:
 
-* Free to host
-* Serverless (no wordpress/mysql to maintain)
-* Secure
-* Updatable content by non-technical users
+- Free to host
+- Serverless (no wordpress/mysql to maintain)
+- Secure
+- Updatable content by non-technical users
 
 Bonus features:
 
-* Fast
-* Easy to maintain / understand (no magic!)
-* Accessible
-* Good SEO
+- Fast
+- Easy to maintain / understand (no magic!)
+- Accessible
+- Good SEO
 
 ## Architecture
 

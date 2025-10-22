@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Cotham Gardens PTFA Website!
+title: Welcome
 image: src/assets/images/dolphins.jpg
 ---
 

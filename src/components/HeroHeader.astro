@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+  title: string;
+  image?: string; // filename under /src/assets/images
+  date?: Date | string;
+};
+
+const { title, image, date } = Astro.props as Props;
+
+// Resolve image from /src/assets/images using astro:assets
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/*'
+);
+const imageKey = image ? `/${image}` : undefined;
+
+const imageModule =
+  imageKey && images[imageKey] ? await images[imageKey]() : undefined;
+const imageMeta: ImageMetadata | undefined = imageModule?.default as any;
+const fullImageHref: string | undefined = imageMeta?.src;
+
+const formattedDate = date
+  ? new Date(date as any).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+  : undefined;
+---
+
+{
+  imageMeta ? (
+    // Full-bleed hero header with overlay and centered title
+    <div class="relative mx-[calc(50%-50vw)] mb-8 w-screen">
+      <Image
+        src={imageMeta}
+        alt={title}
+        class="h-48 w-full object-cover md:h-64"
+      />
+      <div class="absolute inset-0 bg-black/40" />
+      <div class="absolute inset-0 flex items-center justify-center text-white drop-shadow">
+        <div class="container mx-auto flex-grow">
+          <h1 class="px-4 text-3xl font-bold md:text-6xl">{title}</h1>
+          {formattedDate && <time class="text-md px-4">{formattedDate}</time>}
+          {fullImageHref && (
+            <a
+              href={fullImageHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="absolute bottom-4 right-6 flex items-center rounded px-3 py-1 text-white hover:bg-pink-600 hover:text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mr-1 inline h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              view
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  ) : (
+    // Fallback simple header if no image provided
+    <div class="container mx-auto flex-grow px-4 py-8">
+      <h1 class="text-3xl font-bold md:text-4xl">{title}</h1>
+      {formattedDate && (
+        <time class="block text-gray-600">{formattedDate}</time>
+      )}
+    </div>
+  )
+}

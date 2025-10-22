@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 
-import { Image } from 'astro:assets';
+import HeroHeader from '@components/HeroHeader.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -15,76 +15,20 @@ export async function getStaticPaths() {
 const { event } = Astro.props;
 const { Content } = await render(event);
 
-// Resolve event image from /src/assets/images using astro:assets
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/images/*'
-);
-const imagePath = event.data.image ? `/${event.data.image}` : undefined;
-const imageMod =
-  imagePath && images[imagePath] ? images[imagePath]() : undefined;
-// For <Image>, use the ImageMetadata object; for anchor href, prefer built asset src
-const imageSrc =
-  imageMod && ('default' in imageMod ? imageMod.default : imageMod);
-const fullImageHref =
-  (imageMod &&
-    ('src' in imageMod ? imageMod.src : (imageMod as any).default?.src)) ||
-  imagePath;
+// No image resolution logic here; HeroHeader handles optimized image
 ---
 
 <Layout title={event.data.title + ' - Cotham Gardens PTFA'}>
-  {
-    imageSrc && (
-      // Full-bleed hero header
-      <div class="relative mx-[calc(50%-50vw)] mb-8 w-screen">
-        <Image
-          src={imageSrc}
-          alt={event.data.title}
-          class="h-48 w-full object-cover md:h-64"
-        />
-        {/* <div class="absolute inset-0 bg-black/40" /> */}
-        <div class="absolute inset-0 flex items-center justify-center text-white drop-shadow backdrop-blur-sm backdrop-brightness-75">
-          <div class="container mx-auto flex-grow">
-            <h1 class="px-4 text-3xl font-bold md:text-6xl">
-              {event.data.title}
-            </h1>
-            <time class="text-md px-4">
-              {event.data.eventDate.toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
-              })}
-            </time>
-            <a
-              href={fullImageHref}
-              class="absolute bottom-4 right-6 text-white drop-shadow hover:bg-pink-600 hover:text-white rounded px-3 py-1 flex items-center"
-            >
-              {/* magnifying glass icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="mr-1 inline h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              view poster
-            </a>
-          </div>
-        </div>
-      </div>
-    )
-  }
+  <HeroHeader
+    title={event.data.title}
+    image={event.data.image}
+    date={event.data.eventDate}
+  />
 
   <div class="prose lg:prose-xl px-4">
     <a href="/events" class="mb-4 block">&larr; All Events</a>
 
-    {!imageSrc && <h1>{event.data.title}</h1>}
+    {/* Title rendered by HeroHeader (with fallback when no image) */}
 
     <Content />
   </div>
