@@ -20,5 +20,7 @@ Saturday’s workshops are Family Friendly, with Children’s tickets available 
 All materials are provided, but you’re welcome to bring along anything extra or special you want to include in your wreath.
 The workshops will be a relaxed environment with help and advice on hand if you need any- but lots of space if you don’t!
 
-Tickets will go on sale Friday 7th November!
+
+Tickets will go on sale Friday 7th November via Classlist! See https://app.classlist.com/parent/#/events/view/1352431148
+
 Hope to see you there
