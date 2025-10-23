@@ -11,3 +11,5 @@ We're closing the road outside the Elmgrove site after school so everyone can pl
 ## What is a "Play Street"?
 
 Plays streets happen at hundreds of communities in the UK, but are proudly developed by Bristol parents back in 2009. Lots more information can be found on the [Playing Out](https://playingout.net/play-streets/what-are-play-streets/) website.
+
+Classlist event: https://app.classlist.com/parent/#/events/view/1370090792
