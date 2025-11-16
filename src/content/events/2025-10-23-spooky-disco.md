@@ -6,14 +6,13 @@ image: src/assets/images/spooky-disco.jpg
 
 👻 🎃 The famous Cotham Gardens SPOOKY DISCO is on Friday 17th October! 👻 🎃
 
+Only children from the school and their parents can attend. Ticket numbers are limited and we don’t want any children to miss out.
 
-Only children from the school and their parents can attend. Ticket numbers are limited and we don’t want any children to miss out. 
-
-There are 3 sessions - 
+There are 3 sessions -
 4:30 - 5:30 YR, Y1 & Y2
 6:00 - 7:00 Y3 & Y4
 7:15 - 8:15 Y5 & Y6
-You need to be on classlist to be invited to the right session! 
+You need to be on classlist to be invited to the right session!
 
 - Maximum of 4 children per supervising adult. You must be able to look after all the children you bring.
 

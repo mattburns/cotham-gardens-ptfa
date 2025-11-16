@@ -5,26 +5,90 @@ import { getCollection } from 'astro:content';
 const events = (await getCollection('events')).sort(
   (a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
 );
-const upcomingEvents = events.filter(
-  (event) => event.data.eventDate >= new Date()
-);
-const pastEvents = events
-  .filter((event) => event.data.eventDate < new Date())
-  .sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
 ---
 
 <Layout title="Events - Cotham Gardens PTFA">
   <div class="prose lg:prose-xl px-4 py-8">
     <h1>Upcoming Events</h1>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {upcomingEvents.map((event) => <EventCard event={event} />)}
+    <div
+      id="upcoming-events"
+      class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        events.map((event) => (
+          <div
+            class="event-item"
+            data-event-date={event.data.eventDate.toISOString()}
+          >
+            <EventCard event={event} />
+          </div>
+        ))
+      }
     </div>
 
     <h1 class="mt-8">Past Events</h1>
     <div
+      id="past-events"
       class="grid grid-cols-1 gap-4 opacity-50 md:grid-cols-2 lg:grid-cols-3"
     >
-      {pastEvents.map((event) => <EventCard event={event} />)}
+      {
+        events.map((event) => (
+          <div
+            class="event-item"
+            data-event-date={event.data.eventDate.toISOString()}
+          >
+            <EventCard event={event} />
+          </div>
+        ))
+      }
     </div>
   </div>
+
+  <script>
+    function filterEvents() {
+      const now = new Date();
+      const upcomingContainer = document.getElementById('upcoming-events');
+      const pastContainer = document.getElementById('past-events');
+
+      if (!upcomingContainer || !pastContainer) return;
+
+      const upcomingEvents = upcomingContainer.querySelectorAll('.event-item');
+      const pastEvents = pastContainer.querySelectorAll('.event-item');
+
+      // Filter upcoming events
+      upcomingEvents.forEach((eventEl) => {
+        const eventDate = new Date(
+          eventEl.getAttribute('data-event-date') || ''
+        );
+        if (eventDate >= now) {
+          eventEl.style.display = '';
+        } else {
+          eventEl.style.display = 'none';
+        }
+      });
+
+      // Filter past events (in reverse chronological order)
+      const pastEventsArray = Array.from(pastEvents);
+      pastEventsArray.sort((a, b) => {
+        const dateA = new Date(a.getAttribute('data-event-date') || '');
+        const dateB = new Date(b.getAttribute('data-event-date') || '');
+        return dateB.getTime() - dateA.getTime();
+      });
+
+      pastEventsArray.forEach((eventEl) => {
+        const eventDate = new Date(
+          eventEl.getAttribute('data-event-date') || ''
+        );
+        if (eventDate < now) {
+          eventEl.style.display = '';
+          pastContainer.appendChild(eventEl);
+        } else {
+          eventEl.style.display = 'none';
+        }
+      });
+    }
+
+    // Run on page load
+    filterEvents();
+  </script>
 </Layout>

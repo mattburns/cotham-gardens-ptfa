@@ -14,7 +14,6 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props;
 const { Content } = await render(event);
-
 ---
 
 <Layout title={event.data.title + ' - Cotham Gardens PTFA'}>
