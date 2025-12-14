@@ -4,7 +4,7 @@ title: 'Active Travel'
 
 ## Our Mission
 
-Making the school-run a safe and happy experience for our children, freinds and families.
+Making the school-run a safe and happy experience for our children, friends and families.
 
 ## School Streets
 
@@ -12,7 +12,7 @@ A current key goal of this group is to install a [School Street](https://travelw
 
 ## Get Involved
 
-Join our freindly [active travel community on WhatsApp](https://chat.whatsapp.com/BqaqL5YOEEP3zsGpeJflAC').
+Join our friendly [active travel community on WhatsApp](https://chat.whatsapp.com/BqaqL5YOEEP3zsGpeJflAC').
 
 ## Current Activity
 
