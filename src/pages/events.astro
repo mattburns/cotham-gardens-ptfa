@@ -15,12 +15,12 @@ const events = (await getCollection('events')).sort(
       class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
     >
       {
-        events.map((event) => (
+        events.map((event, i) => (
           <div
             class="event-item"
             data-event-date={event.data.eventDate.toISOString()}
           >
-            <EventCard event={event} />
+            <EventCard event={event} index={i} />
           </div>
         ))
       }
@@ -32,12 +32,12 @@ const events = (await getCollection('events')).sort(
       class="grid grid-cols-1 gap-4 opacity-50 md:grid-cols-2 lg:grid-cols-3"
     >
       {
-        events.map((event) => (
+        events.map((event, i) => (
           <div
             class="event-item"
             data-event-date={event.data.eventDate.toISOString()}
           >
-            <EventCard event={event} />
+            <EventCard event={event} index={i} />
           </div>
         ))
       }

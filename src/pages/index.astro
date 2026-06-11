@@ -2,11 +2,120 @@
 import HeroHeader from '@components/HeroHeader.astro';
 import { Content, frontmatter } from '@content/pages/home.md';
 import Layout from '@layouts/Layout.astro';
+
+// The fun events we run through the year (from the PTFA welcome poster)
+const activities = [
+  { icon: '🎄', label: 'Winter Fair', bg: 'bg-sky-100' },
+  { icon: '☀️', label: 'Summer Fair', bg: 'bg-amber-100' },
+  { icon: '🧁', label: 'Bake Sales', bg: 'bg-pink-100' },
+  { icon: '🎲', label: 'Family Games Nights', bg: 'bg-green-100' },
+  { icon: '🏅', label: 'Sponsored Challenges', bg: 'bg-purple-100' },
+  { icon: '✨', label: '…and lots more!', bg: 'bg-rose-100' }
+];
+
+// Things the PTFA has helped fund for the school
+const funded = [
+  'New books for the Golden Bookshelves',
+  'Musical instruments',
+  'Playground improvements',
+  'Sports Day equipment & activities',
+  'New laptops for ICT lessons',
+  'School trips and visits',
+  'Gardening Club activities',
+  'Author visits'
+];
 ---
 
 <Layout title={frontmatter.title}>
   <HeroHeader title={frontmatter.title} image={frontmatter.image} />
-  <div class="prose lg:prose-xl px-4 py-8">
-    <Content />
+
+  <div class="px-4 pb-12">
+    <!-- Welcome intro -->
+    <div class="mx-auto max-w-3xl text-lg">
+      <Content />
+    </div>
+
+    <!-- Fundraising highlight -->
+    <div
+      class="mx-auto mt-8 flex max-w-3xl items-center gap-4 rounded-3xl bg-brand-yellow px-6 py-5 shadow-md"
+    >
+      <span class="text-4xl md:text-5xl" aria-hidden="true">🎈</span>
+      <p class="mb-0 text-lg font-bold text-slate-900 md:text-xl">
+        Did you know? Last year the PTFA raised over <span
+          class="text-2xl md:text-3xl">£20,000</span
+        > for our school!
+      </p>
+    </div>
+
+    <!-- What we do -->
+    <section class="mx-auto mt-12 max-w-4xl">
+      <h2 class="text-center">What we do</h2>
+      <p class="mx-auto mb-8 max-w-2xl text-center">
+        Throughout the year we run fun events for the whole school community —
+        here are just a few:
+      </p>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        {
+          activities.map((a) => (
+            <div
+              class={`flex flex-col items-center rounded-3xl ${a.bg} px-4 py-6 text-center shadow-sm transition duration-200 hover:-rotate-1 hover:scale-105`}
+            >
+              <span class="text-4xl" aria-hidden="true">
+                {a.icon}
+              </span>
+              <span class="mt-3 font-display font-bold text-slate-800">
+                {a.label}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- What we've helped fund -->
+    <section
+      class="mx-auto mt-12 max-w-4xl rounded-3xl bg-green-50 px-6 py-8 md:px-10"
+    >
+      <h2 class="text-center">What your support has helped fund</h2>
+      <p class="mx-auto mb-6 max-w-2xl text-center">
+        Thanks to families and friends like you, we've helped provide:
+      </p>
+      <ul
+        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2"
+      >
+        {
+          funded.map((item) => (
+            <li class="flex items-start gap-3">
+              <span
+                class="mt-2 h-3 w-3 flex-none rounded-full bg-brand-green"
+                aria-hidden="true"
+              />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mb-0 mt-6 text-center font-bold text-brand-green-dark">
+        …and lots more that makes learning more exciting, creative and fun!
+      </p>
+    </section>
+
+    <!-- Get involved -->
+    <section
+      class="mx-auto mt-12 max-w-3xl rounded-3xl bg-brand-teal-dark px-6 py-8 text-center text-white md:px-10"
+    >
+      <h2 class="text-white">Come and get involved!</h2>
+      <p class="mx-auto max-w-xl text-white">
+        You don't need lots of time or any special skills — every little helps,
+        whether it's baking a cake, running a stall, or sharing a fresh idea.
+        Everyone is welcome.
+      </p>
+      <a
+        href="/contact/"
+        class="inline-block rounded-full bg-white px-6 py-3 font-display font-bold !text-brand-teal-dark no-underline shadow transition-colors hover:bg-amber-50"
+      >
+        Say hello →
+      </a>
+    </section>
   </div>
 </Layout>

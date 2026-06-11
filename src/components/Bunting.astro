@@ -1,0 +1,40 @@
+---
+// A row of colourful triangular bunting flags, echoing the PTAF poster.
+// Flags are a fixed size (so the triangles keep a nice constant ratio) and we
+// render plenty of them, centring the row and clipping the overflow so it
+// fills any screen width without stretching or squashing.
+type Props = {
+  count?: number;
+  class?: string;
+};
+
+const { count = 64, class: className = '' } = Astro.props as Props;
+
+const colors = [
+  'bg-brand-coral',
+  'bg-brand-yellow',
+  'bg-brand-green',
+  'bg-brand-teal',
+  'bg-brand-purple',
+  'bg-brand-pink'
+];
+
+const flags = Array.from(
+  { length: count },
+  (_, i) => colors[i % colors.length]
+);
+---
+
+<div
+  class={`flex w-full justify-center overflow-hidden ${className}`}
+  aria-hidden="true"
+>
+  {
+    flags.map((color) => (
+      <span
+        class={`h-12 w-10 flex-none ${color}`}
+        style="clip-path: polygon(0 0, 100% 0, 50% 100%);"
+      />
+    ))
+  }
+</div>

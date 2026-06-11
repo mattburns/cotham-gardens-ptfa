@@ -3,10 +3,8 @@ title: Welcome
 image: src/assets/images/dolphins.jpg
 ---
 
-# Welcome
+# Welcome!
 
-We are the **P**arent, **T**eacher and **F**riends **A**ssociation for [Cotham Gardens Primary School](https://www.cothamgardens.co.uk/) in Bristol. Our goal is to raise money for the school and to help build a strong school community.
+We are the **P**arents, **T**eachers and **F**riends **A**ssociation for [Cotham Gardens Primary School](https://www.cothamgardens.co.uk/) in Bristol — a friendly group of parents, carers, teachers and friends who work together to support our school and build a strong, happy community.
 
-On this website you can find out more about what we do, what we're fundraising for, see our upcoming [events](https://cothamgardensptfa.co.uk/events/), and find out how to get in touch.
-
-Last academic year we were able to give **£14k** to the school for new musical instruments, sports day at Shine, author visits, the librarian, class enrichment activities & more!
+Our aim is simple: **to raise money and run fun events that make school even better for our children.** Every penny we raise goes straight back into the school, and every grown-up at Cotham Gardens is automatically part of the PTFA.

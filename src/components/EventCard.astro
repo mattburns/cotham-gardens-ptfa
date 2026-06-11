@@ -4,32 +4,48 @@ import type { CollectionEntry } from 'astro:content';
 
 type Props = {
   event: CollectionEntry<'events'>;
+  index?: number;
 };
 
-const { event } = Astro.props;
+const { event, index = 0 } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/images/*'
 );
+
+// Cycle through the playful brand palette so each card gets its own pop of colour
+const accents = [
+  { ring: 'border-brand-coral', pill: 'bg-brand-coral' },
+  { ring: 'border-brand-yellow', pill: 'bg-brand-yellow' },
+  { ring: 'border-brand-green', pill: 'bg-brand-green' },
+  { ring: 'border-brand-teal', pill: 'bg-brand-teal' },
+  { ring: 'border-brand-purple', pill: 'bg-brand-purple' },
+  { ring: 'border-brand-pink', pill: 'bg-brand-pink' }
+];
+const accent = accents[index % accents.length];
 ---
 
 <div
-  class="max-w-sm rounded-lg border border-gray-200 bg-white shadow transition duration-200 hover:scale-105"
+  class={`flex h-full max-w-sm flex-col overflow-hidden rounded-3xl border-4 bg-white shadow-md transition duration-200 hover:-rotate-1 hover:scale-105 hover:shadow-xl ${accent.ring}`}
 >
-  <a href={`/events/${event.id}/`}>
+  <a href={`/events/${event.id}/`} class="flex h-full flex-col">
     {
       event.data.image && images[`/${event.data.image}`] && (
         <Image
-          class="rounded-t-lg"
+          class="aspect-video w-full object-cover"
           src={images[`/${event.data.image}`]()}
           alt={event.data.title}
         />
       )
     }
-    <div class="p-5">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight">
+    <div class="flex flex-1 flex-col p-5">
+      <h5
+        class="mb-3 font-display text-2xl font-bold tracking-tight text-slate-800"
+      >
         {event.data.title}
       </h5>
-      <p class="mb-3 font-normal text-gray-700">
+      <span
+        class={`mt-auto inline-block self-start rounded-full px-3 py-1 text-sm font-bold text-slate-900 ${accent.pill}`}
+      >
         {
           event.data.eventDate.toLocaleDateString('en-GB', {
             day: 'numeric',
@@ -37,7 +53,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             year: 'numeric'
           })
         }
-      </p>
+      </span>
     </div>
   </a>
 </div>

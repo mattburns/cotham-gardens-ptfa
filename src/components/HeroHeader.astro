@@ -41,14 +41,17 @@ const formattedDate = date
       <div class="absolute inset-0 bg-black/40" />
       <div class="absolute inset-0 flex items-center justify-center text-white drop-shadow">
         <div class="container mx-auto flex-grow">
-          <h1 class="px-4 text-3xl font-bold md:text-6xl">{title}</h1>
+          <h1 class="px-4 font-display text-3xl font-bold text-white md:text-6xl">
+            {title}
+          </h1>
           {formattedDate && <time class="text-md px-4">{formattedDate}</time>}
           {fullImageHref && (
             <a
               href={fullImageHref}
               target="_blank"
               rel="noopener noreferrer"
-              class="absolute bottom-4 right-6 flex items-center rounded px-3 py-1 text-white hover:bg-pink-600 hover:text-white"
+              aria-label={`View full-size image: ${title}`}
+              class="absolute bottom-4 right-6 flex items-center rounded-full px-3 py-1 text-white hover:bg-brand-coral hover:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +60,7 @@ const formattedDate = date
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 stroke-width="2"
+                aria-hidden="true"
               >
                 <path
                   stroke-linecap="round"
@@ -64,7 +68,7 @@ const formattedDate = date
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
-              view
+              view image
             </a>
           )}
         </div>
