@@ -14,9 +14,22 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props;
 const { Content } = await render(event);
+
+// Plain-text excerpt of the event body for search results and link previews
+const description = (event.body ?? '')
+  .replace(/!\[.*?\]\(.*?\)/g, '') // strip images
+  .replace(/\[(.*?)\]\(.*?\)/g, '$1') // links → just the text
+  .replace(/[#*_>`]/g, '')
+  .replace(/\s+/g, ' ')
+  .trim()
+  .replace(/^(.{0,160})(\s.*)?$/s, '$1');
 ---
 
-<Layout title={event.data.title + ' - Cotham Gardens PTFA'}>
+<Layout
+  title={event.data.title + ' - Cotham Gardens PTFA'}
+  description={description}
+  image={event.data.image}
+>
   <HeroHeader
     title={event.data.title}
     image={event.data.image}

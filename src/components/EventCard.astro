@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { resolveImage } from '@utils/images';
 
 type Props = {
   event: CollectionEntry<'events'>;
@@ -8,9 +9,7 @@ type Props = {
 };
 
 const { event, index = 0 } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/images/*'
-);
+const imageMeta = await resolveImage(event.data.image);
 
 // Cycle through the playful brand palette so each card gets its own pop of colour
 const accents = [
@@ -29,10 +28,10 @@ const accent = accents[index % accents.length];
 >
   <a href={`/events/${event.id}/`} class="flex h-full flex-col">
     {
-      event.data.image && images[`/${event.data.image}`] && (
+      imageMeta && (
         <Image
           class="aspect-video w-full object-cover"
-          src={images[`/${event.data.image}`]()}
+          src={imageMeta}
           alt={event.data.title}
         />
       )
