@@ -1,5 +1,5 @@
 ---
-title: Summer Fair
+title: Summer Fair 2025
 eventDate: 2025-07-12T12:00:00.000+01:00
 image: src/assets/images/cotham-gardens-primary-summer-fair-2025-poster.png
 ---
