@@ -1,6 +1,6 @@
 ---
 title: Easter Egg Hunt 2026
-eventDate: 2025-03-28
+eventDate: 2026-03-27T15:30:00.000+00:00
 image: src/assets/images/2026-egg-hunt-poster.png
 ---
 
