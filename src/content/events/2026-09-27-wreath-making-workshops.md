@@ -1,5 +1,5 @@
 ---
-title: Wreath Making Workshops - SAVE THE DATES! 4th, 5th, 6th December
+title: Wreath Making Workshops - SAVE THE DATE! 4th, 5th, 6th December
 eventDate: 2026-12-04T19:00:00.000+00:00
 image: src/assets/images/wreath-making-.png
 ---
