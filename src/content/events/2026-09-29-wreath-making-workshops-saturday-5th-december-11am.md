@@ -1,5 +1,5 @@
 ---
-title: Wreath Making Workshops - Saturday 5th December 2:30am
+title: Wreath Making Workshops - Saturday 5th December 2:30pm
 eventDate: 2026-12-05T14:30:00.000+00:00
 image: src/assets/images/wreath-making-.png
 ---
