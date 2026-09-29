@@ -1,6 +1,6 @@
 ---
 title: Wreath Making Workshops - Sunday 6th December 2:30pm
-eventDate: 2026-12-05T14:30:00.000+00:00
+eventDate: 2026-12-06T14:30:00.000+00:00
 image: src/assets/images/wreath-making-.png
 ---
 The Wreath Workshops return this December! 
