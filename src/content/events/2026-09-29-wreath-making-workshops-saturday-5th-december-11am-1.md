@@ -1,0 +1,15 @@
+---
+title: Wreath Making Workshops - Saturday 5th December 11am
+eventDate: 2026-12-05T11:00:00.000+00:00
+image: src/assets/images/wreath-making-.png
+---
+The Wreath Workshops return this December! 
+Come and join us on 
+- Friday 4th (7PM)
+- Saturday 5th (11am & 2.30pm)
+- Sunday 6th December (11am & 2.30pm) 
+to make a Seasonal Wreath. 
+
+Tickets will be available from early October. 
+
+Book on Classlist, limited numbers available!
