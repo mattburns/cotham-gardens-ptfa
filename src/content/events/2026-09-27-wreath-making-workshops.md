@@ -10,7 +10,6 @@ Come and join us on
 - Sunday 6th December (11am & 2.30pm) 
 to make a Seasonal Wreath. 
 
-Tickets will be available from early October. 
+Book tickets via Classlist now, limited numbers available! https://app.classlist.com/events/#/events/view/1531811182
 
-Book on Classlist, limited numbers available!
-https://app.classlist.com/events/#/events/view/1531811182
+
