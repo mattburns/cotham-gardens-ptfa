@@ -67,6 +67,16 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Event Date', name: 'eventDate', widget: 'datetime' }
+      - label: 'End Date'
+        name: 'endDate'
+        widget: 'datetime'
+        required: false
+        hint: 'Optional. When the event finishes. Leave blank and calendar entries will default to 2 hours.'
+      - label: 'Location'
+        name: 'location'
+        widget: 'string'
+        required: false
+        hint: 'Optional. Shown in calendar entries, e.g. "Cotham Gardens Primary School, Elmgrove site".'
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'Image'
         name: 'image'

@@ -1,7 +1,9 @@
 ---
 import Layout from '@layouts/Layout.astro';
 
+import AddToCalendar from '@components/AddToCalendar.astro';
 import HeroHeader from '@components/HeroHeader.astro';
+import { markdownToText } from '@utils/text';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -16,12 +18,8 @@ const { event } = Astro.props;
 const { Content } = await render(event);
 
 // Plain-text excerpt of the event body for search results and link previews
-const description = (event.body ?? '')
-  .replace(/!\[.*?\]\(.*?\)/g, '') // strip images
-  .replace(/\[(.*?)\]\(.*?\)/g, '$1') // links → just the text
-  .replace(/[#*_>`]/g, '')
+const description = markdownToText(event.body)
   .replace(/\s+/g, ' ')
-  .trim()
   .replace(/^(.{0,160})(\s.*)?$/s, '$1');
 ---
 
@@ -38,6 +36,7 @@ const description = (event.body ?? '')
 
   <div class="prose lg:prose-xl px-4">
     <a href="/events" class="mb-4 block">&larr; All Events</a>
+    <AddToCalendar event={event} />
     <Content />
   </div>
 </Layout>

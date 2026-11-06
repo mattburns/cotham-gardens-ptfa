@@ -10,6 +10,11 @@ const events = defineCollection({
   schema: z.object({
     title: z.string(),
     eventDate: z.coerce.date(),
+    // Optional: when the event finishes. Defaults to 2 hours after the start
+    // in calendar links if left blank.
+    endDate: z.coerce.date().optional(),
+    // Optional: free-text venue, e.g. "Cotham Gardens Primary School, Main Hall"
+    location: z.string().optional(),
     image: z.string().optional()
   })
 });
