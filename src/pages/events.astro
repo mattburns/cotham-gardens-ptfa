@@ -5,11 +5,44 @@ import { getCollection } from 'astro:content';
 const events = (await getCollection('events')).sort(
   (a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
 );
+
+// Subscribable feed of all events (see src/pages/events.ics.ts)
+const feedUrl = new URL('/events.ics', Astro.site!);
+const webcalUrl = feedUrl.toString().replace(/^https?:/, 'webcal:');
+const googleSubscribeUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcalUrl)}`;
 ---
 
 <Layout title="Events - Cotham Gardens PTFA">
   <div class="prose lg:prose-xl px-4 py-8">
     <h1>Upcoming Events</h1>
+
+    <div
+      class="not-prose mb-6 flex flex-wrap items-center gap-3 rounded-3xl border-4 border-brand-yellow bg-white p-4 shadow-md"
+    >
+      <div class="mr-auto font-display text-lg font-bold text-slate-800">
+        📅 Never miss an event — subscribe to our calendar
+      </div>
+      <a
+        href={googleSubscribeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full bg-brand-green px-4 py-2 text-sm font-bold !text-slate-900 no-underline transition hover:scale-105 hover:shadow"
+      >
+        Google Calendar
+      </a>
+      <a
+        href={webcalUrl}
+        class="rounded-full bg-brand-teal px-4 py-2 text-sm font-bold !text-slate-900 no-underline transition hover:scale-105 hover:shadow"
+      >
+        Apple / Outlook
+      </a>
+      <a
+        href="/events.ics"
+        class="text-sm font-normal !text-slate-500 hover:!text-brand-teal-dark"
+      >
+        .ics link
+      </a>
+    </div>
     <div
       id="upcoming-events"
       class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"

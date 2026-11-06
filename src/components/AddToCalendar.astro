@@ -1,0 +1,53 @@
+---
+// "Add to calendar" buttons for a single event.
+// Google is a plain link; Apple Calendar and Outlook open the per-event .ics file.
+import type { CollectionEntry } from 'astro:content';
+import { googleCalendarUrl, toCalendarEvent } from '@utils/calendar';
+
+type Props = {
+  event: CollectionEntry<'events'>;
+};
+
+const { event } = Astro.props;
+const ev = toCalendarEvent(event, Astro.site!);
+const googleUrl = googleCalendarUrl(ev);
+const icsUrl = `/events/${event.id}.ics`;
+
+const timeFormat: Intl.DateTimeFormatOptions = {
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: 'Europe/London'
+};
+const when = ev.allDay
+  ? 'All day'
+  : `${ev.start.toLocaleTimeString('en-GB', timeFormat)}` +
+    (event.data.endDate
+      ? ` – ${ev.end.toLocaleTimeString('en-GB', timeFormat)}`
+      : '');
+---
+
+<div
+  class="not-prose my-6 flex flex-wrap items-center gap-3 rounded-3xl border-4 border-brand-yellow bg-white p-4 shadow-md"
+>
+  <div class="mr-auto">
+    <div class="font-display text-lg font-bold text-slate-800">
+      📅 {when}
+    </div>
+    {ev.location && <div class="text-sm text-slate-600">📍 {ev.location}</div>}
+  </div>
+  <a
+    href={googleUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="rounded-full bg-brand-green px-4 py-2 text-sm font-bold !text-slate-900 no-underline transition hover:scale-105 hover:shadow"
+  >
+    Add to Google Calendar
+  </a>
+  <a
+    href={icsUrl}
+    download
+    class="rounded-full bg-brand-teal px-4 py-2 text-sm font-bold !text-slate-900 no-underline transition hover:scale-105 hover:shadow"
+  >
+    Add to Apple / Outlook
+  </a>
+</div>
